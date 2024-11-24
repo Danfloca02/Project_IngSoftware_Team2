@@ -49,9 +49,9 @@ Facultad
         Descripción
         Ubicación
     Relaciones:
-        Tiene múltiples Carreras (1..*)
-        Contiene múltiples Usuarios (1..*)
-        Alberga múltiples Espacios (1..*)
+        Tiene múltiples Carreras (1...n)
+        Contiene múltiples Usuarios (1...*)
+        Alberga múltiples Espacios (1...*)
 
 Carrera
     

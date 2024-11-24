@@ -91,28 +91,27 @@ class Comentario {
 
 ' Relaciones
 Moderador -up-|> Usuario
-Profesor -down-|> Usuario
-Estudiante -up-|> Usuario
-PersonalApoyo -right-|> Usuario
+Profesor -up-|> Usuario
+Estudiante -right-|> Usuario
+PersonalApoyo -up-|> Usuario
 
 Usuario "1" -up- "*" Publicacion: crea >
-Usuario "1" -right- "*" Evento: participa >
+Usuario "1" -up- "*" Evento: participa >
 Usuario "1" -up- "*" Notificacion: recibe >
 
-Estudiante "*" -right- "1" Facultad: pertenece >
-Estudiante "*" -down- "1..2" Carrera: cursa >
+Estudiante "*" -up- "1...2" Carrera: cursa >
 
-Facultad "1" -- "*" Carrera: tiene >
-Facultad "1" -- "*" Usuario: contiene >
-Facultad "1" -- "*" Espacio: alberga >
+Facultad "1" *-down- "n" Carrera: tiene >
+Facultad "1" *-down- "*" Usuario: contiene >
+Facultad "1" *-up- "*" Espacio: alberga >
 
-Evento "1" -- "1" Usuario: creado por >
-Evento "*" -- "1" Espacio: se realiza en >
-Evento "1" -- "*" Notificacion: genera >
+Evento "*" -down- "1" Usuario: creado por >
+Evento "*" -left- "1" Espacio: se realiza en >
+Evento "1" -- "*" Publicacion: genera >
 
-Publicacion "1" -- "*" Comentario: tiene >
-Publicacion "1" -- "*" Notificacion: genera >
+Publicacion "1" -- "0...*" Comentario: tiene >
+Publicacion "1" -- "0...*" Notificacion: genera >
 
-Comentario "*" -- "1" Usuario: creado por >
+Comentario "*" -down- "1" Usuario: creado por >
 
 @enduml
