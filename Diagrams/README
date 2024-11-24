@@ -1,0 +1,34 @@
+Este es la documentacion del proceso de realización del los diagramas, donde en base al siguiente texto mostramos como analizamos el funcionamiento del negocio / dominio
+
+El campus universitario es un espacio dinámico donde estudiantes, profesores y personal de
+apoyo (técnicos, administrativos y obreros) comparten su pasión por el conocimiento. En la
+Facultad de Ciencias de la UCV, cada día surgen nuevas ideas, proyectos, eventos, actividades que
+enriquecen la vida académica en el marco de la gestión de la extensión universitaria. Sin embargo,
+esta vibrante comunidad se enfrenta a un desafío: la falta de un espacio común donde dar a
+conocer estas iniciativas.
+Los estudiantes de las distintas carreras organizan talleres, seminarios, grupos de estudio o
+clubes para actividades deportivas, culturales así como de índole de esparcimiento,
+organizándose en grupos por temas de interés. No obstante, encontrar la información sobre estas
+actividades pareciera no resultar efectiva. Los profesores, por su parte, desean compartir sus
+investigaciones, proyectos, experiencias con sus alumnos y colegas, pero no cuentan con una
+plataforma adecuada para hacerlo. Y el personal administrativo busca formas de promover la
+participación de toda la comunidad en los eventos institucionales.
+Ante esta situación, surge la necesidad de crear un espacio virtual donde todos los miembros
+de la facultad puedan conectarse, compartir y descubrir nuevas oportunidades. Un lugar donde la
+información fluya libremente, donde los estudiantes puedan encontrar eventos/actividades que se
+ajusten a sus intereses y donde los profesores puedan dar a conocer sus proyectos así como los
+resultados de sus investigaciones.
+
+En resumen, se busca construir un puente digital que conecte a toda la comunidad de la Facultad
+de Ciencias de la UCV, fortaleciendo el sentido de pertenencia y promoviendo el desarrollo de un
+ambiente académico más dinámico y participativo.
+Se requiere entonces que los estudiantes de la asignatura de Ingeniería del Software,
+semestre lectivo 2-2024, desarrollen un software que cumpla el propósito expuesto, considerando
+las siguientes funcionalidades claves:
+● Registro de usuarios y gestión de perfil de usuario.
+● Creación, publicación y edición de eventos/actividades.
+● Calendario de eventos.
+● Sistema de notificaciones.
+● Comentar las publicaciones.
+● Moderación de publicaciones (revisión y aprobación de publicaciones por parte de
+usuarios con rol de administradores o moderadores).

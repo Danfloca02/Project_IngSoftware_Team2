@@ -1,0 +1,113 @@
+title ModeloDeDominio_UML_Clases
+
+@startuml
+
+class Usuario {
+  -ID: String
+  -Nombre: String
+  -EmailInstitucional: String
+  -Foto: Image
+  -Estado: Boolean
+
+  +crearPublicacion()
+  +participarEvento()
+  +recibirNotificacion()
+}
+
+class Moderador extends Usuario {
+  -nivelPermisos: int
+  -areaModeracion: String
+
+  +aprobarPublicacion()
+  +moderarComentarios()
+  +gestionarEventos()
+}
+
+class Estudiante extends Usuario {
+}
+
+class Profesor extends Usuario {
+  +crearEvento()
+}
+
+class PersonalApoyo extends Usuario {
+  +realizarTareasApoyo()
+}
+
+class Facultad {
+  -ID: String
+  -Nombre: String
+  -Descripcion: String
+  -Ubicacion: String
+}
+
+class Carrera {
+  -ID: String
+  -Nombre: String
+  -Descripcion: String
+  -Coordinador: String
+}
+
+class Evento {
+  -ID: String
+  -Titulo: String
+  -Descripcion: String
+  -FechaHora: DateTime
+  -Tipo: String
+  -Estado: String
+}
+
+class Notificacion {
+  -ID: String
+  -Contenido: String
+  -Fecha: DateTime
+  -Tipo: String
+  -Estado: String
+}
+
+class Espacio {
+  -ID: String
+  -Nombre: String
+  -Tipo: String
+  -Capacidad: int
+  -Disponibilidad: Boolean
+}
+
+class Publicacion {
+  -ID: String
+  -Titulo: String
+  -Contenido: String
+  -Fecha: DateTime
+  -Estado: String
+  -Tipo: String
+}
+
+class Comentario {
+  -ID: String
+  -Contenido: String
+  -Fecha: DateTime
+  -Estado: String
+}
+
+' Relaciones
+Usuario "1" -- "*" Publicacion: crea >
+Usuario "1" -- "*" Evento: participa >
+Usuario "1" -- "*" Notificacion: recibe >
+
+Estudiante "*" -- "1..2" Facultad: pertenece >
+Estudiante "*" -- "1..2" Carrera: pertenece >
+
+Facultad "1" -- "*" Carrera: tiene >
+Facultad "1" -- "*" Usuario: contiene >
+Facultad "1" -- "*" Espacio: alberga >
+
+Evento "1" -- "1" Usuario: creado por >
+Evento "*" -- "1" Espacio: se realiza en >
+Evento "1" -- "*" Notificacion: genera >
+
+Publicacion "1" -- "*" Comentario: tiene >
+Publicacion "1" -- "*" Notificacion: genera >
+
+Comentario "*" -- "1" Usuario: creado por >
+
+@enduml
