@@ -1,6 +1,6 @@
 title ModeloDeDominio_UML_Clases
 
-@startuml
+@startuml DomainModel
 
 class Usuario {
   -ID: String
@@ -14,7 +14,7 @@ class Usuario {
   +recibirNotificacion()
 }
 
-class Moderador extends Usuario {
+class Moderador {
   -nivelPermisos: int
   -areaModeracion: String
 
@@ -23,14 +23,14 @@ class Moderador extends Usuario {
   +gestionarEventos()
 }
 
-class Estudiante extends Usuario {
+class Estudiante {
 }
 
-class Profesor extends Usuario {
+class Profesor {
   +crearEvento()
 }
 
-class PersonalApoyo extends Usuario {
+class PersonalApoyo {
   +realizarTareasApoyo()
 }
 
@@ -90,12 +90,17 @@ class Comentario {
 }
 
 ' Relaciones
-Usuario "1" -- "*" Publicacion: crea >
-Usuario "1" -- "*" Evento: participa >
-Usuario "1" -- "*" Notificacion: recibe >
+Moderador -up-|> Usuario
+Profesor -down-|> Usuario
+Estudiante -up-|> Usuario
+PersonalApoyo -right-|> Usuario
 
-Estudiante "*" -- "1..2" Facultad: pertenece >
-Estudiante "*" -- "1..2" Carrera: pertenece >
+Usuario "1" -up- "*" Publicacion: crea >
+Usuario "1" -right- "*" Evento: participa >
+Usuario "1" -up- "*" Notificacion: recibe >
+
+Estudiante "*" -right- "1" Facultad: pertenece >
+Estudiante "*" -down- "1..2" Carrera: cursa >
 
 Facultad "1" -- "*" Carrera: tiene >
 Facultad "1" -- "*" Usuario: contiene >

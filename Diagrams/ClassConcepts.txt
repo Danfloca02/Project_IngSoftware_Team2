@@ -27,8 +27,8 @@ Moderador (Hereda de Usuario)
 Estudiante (Hereda de Usuario)
     
     Relaciones:
-        Pertenece a una Facultad (1..2)
-        Pertenece a una Carrera (1..2)
+        Pertenece a una Facultad (1)
+        Cursa una Carrera (1..2)
 
 Profesor (Hereda de Usuario)
 
