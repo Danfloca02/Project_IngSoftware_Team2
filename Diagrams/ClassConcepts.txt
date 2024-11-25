@@ -1,7 +1,6 @@
 CLASES:
  
 Usuario (Clase Base)
-
     Atributos:
         ID
         Nombre
@@ -17,13 +16,11 @@ Usuario (Clase Base)
         Revisa el Calendario
 
 Moderador (Hereda de Usuario)
-    
     Atributos:
         Nivel de permisos
         Área de moderación
 
 Estudiante (Hereda de Usuario)
-    
     Relaciones:
         Cursa una Carrera (1..2)
 
@@ -50,7 +47,6 @@ Carrera
         Coordinador
 
 Evento
-    
     Atributos:
         ID
         Título
