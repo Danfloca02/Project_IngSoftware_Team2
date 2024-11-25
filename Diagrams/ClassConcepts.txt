@@ -1,7 +1,6 @@
 CLASES:
  
 Usuario (Clase Base)
-
     Atributos:
         ID
         Nombre
@@ -10,12 +9,12 @@ Usuario (Clase Base)
         Foto
         Estado (activo/inactivo)
     Relaciones:
-        Crea múltiples Publicaciones (1..*)
-        Participa en múltiples Eventos (..)
-        Recibe múltiples Notificaciones (1..*)
+        Crea múltiples Publicaciones (0..*)
+        Participa en múltiples Eventos (0..*)
+        Recibe múltiples Notificaciones (0..*)
+        Revisa Calendaario (1)
 
 Moderador (Hereda de Usuario)
-    
     Atributos:
         Nivel de permisos
         Área de moderación
@@ -25,47 +24,41 @@ Moderador (Hereda de Usuario)
         Gestionar eventos
 
 Estudiante (Hereda de Usuario)
-    
     Relaciones:
         Pertenece a una Facultad (1)
-        Cursa una Carrera (1..2)
+        Cursa una o dos Carreras (1..2)
 
 Profesor (Hereda de Usuario)
-
     Relaciones:
         Crea eventos
 
 PersonalApoyo (Hereda de Usuario)
-
     Relaciones:
         Realizar Tareas de Apoyo
 
 
 Facultad
-    
     Atributos:
         ID
         Nombre
         Descripción
         Ubicación
     Relaciones:
-        Tiene múltiples Carreras (1...n)
-        Contiene múltiples Usuarios (1...*)
-        Alberga múltiples Espacios (1...*)
+        Tiene múltiples Carreras (n)
+        Contiene múltiples Usuarios (*)
+        Alberga múltiples Espacios (*)
 
 Carrera
-    
     Atributos:
         ID
         Nombre
         Descripción
         Coordinador
     Relaciones:
-        Pertenece a una Facultad (1..1)
-        Tiene múltiples Usuarios (1..*)
+        Pertenece a una Facultad (1)
+        Tiene múltiples Usuarios (*)
 
 Evento
-    
     Atributos:
         ID
         Título
@@ -74,13 +67,12 @@ Evento
         Tipo (académico/cultural/deportivo)
         Estado (pendiente/aprobado/rechazado)
     Relaciones:
-        Creado por Usuario (1..1)
-        Se realiza en Espacio (1..1)
-        Tiene múltiples Participantes (..)
+        Creado por Usuario (1..*)
+        Se realiza en Espacio (1)
+        Tiene múltiples Participantes (*)
         Genera Notificaciones (1..*)
 
 Notificacion
-
     Atributos:
         ID
         Contenido
@@ -88,8 +80,8 @@ Notificacion
         Tipo
         Estado (leída/no leída)
     Relaciones:
-        Destinada a Usuario (1..1)
-        Relacionada con Evento/Publicación (1..1)
+        Destinada a Usuario (*)
+        Relacionada con Evento/Publicación (1)
 
 Espacio
     Atributos:
@@ -111,9 +103,9 @@ Publicacion
         Estado (pendiente/aprobado/rechazado)
         Tipo (académica/informativa/social)
     Relaciones:
-        Creada por Usuario (1..1)
-        Tiene múltiples Comentarios (1..*)
-        Genera Notificaciones (1..*)
+        Creada por Usuario (1)
+        Tiene múltiples Comentarios (0..*)
+        Genera Notificaciones (0..*)
 
 Comentario
     Atributos:
@@ -122,5 +114,10 @@ Comentario
         Fecha
         Estado
     Relaciones:
-        Pertenece a Publicación (1..1)
-        Creado por Usuario (1..1)
+        Pertenece a Publicación (1)
+        Creado por Usuario (1)
+
+Calendario
+    Relaciones:
+        Guarda Eventos (0..*)
+        Muestra Eventos (0..*)
