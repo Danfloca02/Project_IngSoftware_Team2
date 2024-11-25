@@ -9,31 +9,25 @@ abstract class Usuario {
   -Foto: Image
   -Estado: Boolean
 
-  +crearPublicacion()
-  +participarEvento()
-  +recibirNotificacion()
-  +comentarPublicacion()
-  +reaccionarPublicacion()
+  
 }
 
 class Moderador {
   -nivelPermisos: int
   -areaModeracion: String
 
-  +aprobarPublicacion()
-  +moderarComentarios()
-  +gestionarEventos()
+  
 }
 
 class Estudiante {
 }
 
 class Profesor {
-  +crearEvento()
+  
 }
 
 class PersonalApoyo {
-  +realizarTareasApoyo()
+  
 }
 
 class Facultad {
@@ -92,8 +86,7 @@ class Comentario {
 }
 
 class Calendario {
-  +guardarEvento()
-  +mostrarEventos()
+  
 }
 
 ' Relaciones
